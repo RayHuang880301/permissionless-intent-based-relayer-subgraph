@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "PermissionlessIntentBasedRelayer": {
+      "address": "0xB9D14797393282f536f45CDd082C749c0982c535",
+      "startBlock": 10048506
+    }
+  }
+}

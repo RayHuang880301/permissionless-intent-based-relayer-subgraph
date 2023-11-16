@@ -1,0 +1,18 @@
+{
+  "name": "pibr",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ pibr",
+    "create-local": "graph create --node http://localhost:8020/ pibr",
+    "remove-local": "graph remove --node http://localhost:8020/ pibr",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 pibr",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.58.0",
+    "@graphprotocol/graph-ts": "0.30.0"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}

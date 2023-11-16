@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PermissionlessIntentBasedRelayer
+    network: goerli
+    source:
+      address: "0xB9D14797393282f536f45CDd082C749c0982c535"
+      abi: PermissionlessIntentBasedRelayer
+      startBlock: 10048506
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - NewRelayer
+        - RelayerUpdated
+      abis:
+        - name: PermissionlessIntentBasedRelayer
+          file: ./abis/PermissionlessIntentBasedRelayer.json
+      eventHandlers:
+        - event: NewRelayer(indexed address,string)
+          handler: handleNewRelayer
+        - event: RelayerUpdated(indexed address,string)
+          handler: handleRelayerUpdated
+      file: ./src/permissionless-intent-based-relayer.ts
