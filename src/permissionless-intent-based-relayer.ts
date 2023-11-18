@@ -6,7 +6,10 @@ import { NewRelayer } from "../generated/schema";
 
 export function handleNewRelayer(event: NewRelayerEvent): void {
   const relayer = event.params.relayer;
-  let entity = new NewRelayer(relayer);
+  let entity = NewRelayer.load(relayer)
+  if (entity == null) {
+    entity = new NewRelayer(relayer)
+  }
 
   entity.relayer = event.params.relayer;
   entity.relayerMetadataUri = event.params.relayerMetadataUri;
@@ -20,7 +23,10 @@ export function handleNewRelayer(event: NewRelayerEvent): void {
 
 export function handleRelayerUpdated(event: RelayerUpdatedEvent): void {
   const relayer = event.params.relayer;
-  let entity = new NewRelayer(relayer);
+  let entity = NewRelayer.load(relayer)
+  if (entity == null) {
+    entity = new NewRelayer(relayer)
+  }
 
   entity.relayerMetadataUri = event.params.newRelayerMetadataUri;
 

@@ -6,9 +6,9 @@ dataSources:
     name: PermissionlessIntentBasedRelayer
     network: goerli
     source:
-      address: "0xB9D14797393282f536f45CDd082C749c0982c535"
+      address: "0x3C45Bc53DB5D63838b3dDabd59c5A6b6cDcFbb62"
       abi: PermissionlessIntentBasedRelayer
-      startBlock: 10048506
+      startBlock: 10064080
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
