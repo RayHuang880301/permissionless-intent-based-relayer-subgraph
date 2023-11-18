@@ -1,0 +1,17 @@
+type NewRelayer @entity(immutable: true) {
+  id: Bytes!
+  relayer: Bytes! # address
+  relayerMetadataUri: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RelayerUpdated @entity(immutable: true) {
+  id: Bytes!
+  relayer: Bytes! # address
+  newRelayerMetadataUri: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
